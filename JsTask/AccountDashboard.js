@@ -58,3 +58,9 @@ Employees =[
     }
     ]
   
+const departmentHr =Employees.filter((findHr)=>findHr.department==="HR")
+
+const departmentSales =Employees.filter((findSales)=>findSales.department==="Sales")
+
+const departmentEngineering =Employees.filter((findEngineering)=>findEngineering.department==="Engineering")
+
