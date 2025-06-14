@@ -1,52 +1,60 @@
 Employees =[
     {
-           Id:1,
-        Name:"Alice",
-        Department:"Engineering",
-        Salary:12000,
-        BonusPercentage:15
+           id:1,
+        name:"Alice",
+        department:"Engineering",
+        salary:12000,
+        bonusPercentage:15,
+        yearsOfExperience:2
     },
     {
-         Id:2,
-        Name:"Charlie",
-        Department:"Arts",
-        Salary:13000,
-        BonusPercentage:10
+         id:2,
+        name:"Charlie",
+        department:"HR",
+        salary:73000,
+        bonusPercentage:10,
+        yearsOfExperience:1
     },
     {
-         Id:3,
-        Name:"Arun",
-        Department:"Engineering",
-        Salary:32000,
-        BonusPercentage:20
+         id:3,
+        name:"Arun",
+        department:"Sales",
+        salary:32000,
+        bonusPercentage:20,
+        yearsOfExperience:3
     },
     {
-         Id:4,
-        Name:"Ronaldo",
-        Department:"Arts",
-        Salary:15000,
-        BonusPercentage:10
+         id:4,
+        name:"Ronaldo",
+        department:"HR",
+        salary:15000,
+        bonusPercentage:10,
+        yearsOfExperience:4
     },
     {
-        Id:5,
-        Name:"Justin",
-        Department:"Engineering",
-        Salary:25000,
-        BonusPercentage:15
+        id:5,
+        name:"Justin",
+        department:"Engineering",
+        salary:75000,
+        bonusPercentage:15,
+        yearsOfExperience:2
+    
     },
     {
-         Id:6,
-        Name:"Dave",
-        Department:"Arts",
-        Salary:65000,
-        BonusPercentage:20
+         id:6,
+        name:"Dave",
+        department:"Sales",
+        salary:65000,
+        bonusPercentage:20,
+        yearsOfExperience:3
     },
     {
-        Id:7,
-        Name:"Jon",
-        Department:"Engineering",
-        Salary:45000,
-        BonusPercentage:25
+        id:7,
+        name:"Jon",
+        department:"Engineering",
+        salary:45000,
+        bonusPercentage:25,
+        yearsOfExperience:2
     }
     ]
   
