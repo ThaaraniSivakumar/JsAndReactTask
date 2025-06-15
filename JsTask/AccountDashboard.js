@@ -138,7 +138,7 @@ const bonusForHr = ()=>{
         }
         else{
             const more = 0.2 * sales.salary
-            SalesBonus.salary += more
+            sales.salary += more
             SalesBonus.push({
             ID :sales.id,
             Name : sales.name,
@@ -173,22 +173,42 @@ console.log(bonusForHr())
 
 
 const filterEmployeesByDepartment = (deptName)=>{
-    
-    const findDuplicated = [...new Set(Employees.map(emp => emp.id))]
+    const uniqueEmployee = new Map()
+    for(const deptUnique of Employees){
+        if(!uniqueEmployee.has(deptUnique.id)){
+            uniqueEmployee.set(deptUnique.id,deptUnique)
+        }
+    }
+    const findDuplicated = [...uniqueEmployee.values()]
     const filteredEmployee=[]
-    for(const dept of Employees){
+    for(const dept of findDuplicated){
         if(dept.department === deptName){
             const Bonus = (dept.bonusPercentage / 100 ) * dept.salary
-            filteredEmployee.push({
+         filteredEmployee.push({
                 Name : dept.name,
-                Id :dept.id,
-                Department : dept.department,
-                BaseSalary : dept.salary,
+                Salary : dept.salary,
                 Bonus : Bonus,
                 TotalCompensation: dept.salary + Bonus
             })
         }
     }
-    return filteredEmployee
+    const updateEmployeeData=[]
+    for(const employee of findDuplicated){
+        const Bonus=(employee.bonusPercentage / 100)*employee.salary
+        const updatedData = {
+      id: employee.id,
+      Name: employee.name,
+      Department: employee.department,
+      Salary: employee.salary,
+      BonusPercentage: employee.bonusPercentage,
+      Bonus: Bonus,
+      TotalCompensation: employee.salary + Bonus
+    };
+    updateEmployeeData.push(updatedData)
+    }
+    return {[deptName]: filteredEmployee,
+            UpdatedEmployee:  updateEmployeeData
+    }
 }
-console.log(filterEmployeesByDepartment("Sales"))
+console.log(filterEmployeesByDepartment("Engineering"))
+
