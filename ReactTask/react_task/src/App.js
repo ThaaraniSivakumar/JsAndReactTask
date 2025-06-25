@@ -1,4 +1,5 @@
-import { AccountSummary } from './AccountSummary';
+import { AccountSummary } from './components/AccountSummary';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 
 function App() {
