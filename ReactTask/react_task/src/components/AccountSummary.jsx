@@ -1,7 +1,7 @@
 import {Table} from 'react-bootstrap';
 
 
-export const AccountSummary = () =>{
+export const AccountSummary = (props) =>{
   return(
     <div  className='m-4'>
    <Table  bordered>
@@ -14,9 +14,9 @@ export const AccountSummary = () =>{
       </thead>
       <tbody>
         <tr>
-          <td>1</td>
-          <td>Mark</td>
-          <td>Otto</td>
+          <td>Thaarani</td>
+          <td>922122106110</td>
+          <td>{props.amount}</td>
         </tr>
       </tbody>
     </Table>

@@ -5,14 +5,14 @@ import { useState } from 'react';
 
 export const AddTransactionForm =(props)=>{
 
-    const [customerId , setCustomerId] = useState('')
-    const [customerName , setCustomerName] = useState('')
-    const [customerEmail , setCustomerEmail] = useState('')
+    const [customerAmount , setCustomerAmount] = useState('')
+    const [customerDescription , setCustomerDescription] = useState('')
+    const [type , setType] = useState('')
     const handleSave = () => {
         const customer = {
-      customerId: customerId,
-      customerName: customerName,
-      customerEmail: customerEmail,
+      customerAmount: customerAmount,
+      customerName: customerDescription,
+      type: type,
     }
     props.save(customer)
     props.hide()
@@ -27,18 +27,33 @@ export const AddTransactionForm =(props)=>{
         </Modal.Header>
         <Modal.Body>
         <Form>
+          <Form.Group className="mb-3">
+          <Form.Label htmlFor="disabledSelect">Disabled select menu</Form.Label>
+          <Form.Select id="disabledSelect">
+            <option>David</option>
+            <option>Soniya</option>
+            <option>John</option>
+            <option>Prabha</option>
+
+          </Form.Select>
+          </Form.Group>
+          <Form.Group className="mb-3" controlId="formBasicEmail">
+        <Form.Label>Description</Form.Label>
+        <Form.Control type='text' placeholder="Enter Description" onChange={(e)=> setCustomerDescription(e.target.value)}/>
+        </Form.Group>
         <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Customer ID</Form.Label>
-        <Form.Control  placeholder="Enter ID" onChange={(e)=> setCustomerId(e.target.value)}/>
+        <Form.Label>Amount</Form.Label>
+        <Form.Control  placeholder="Enter Amount" onChange={(e)=> setCustomerAmount(e.target.value)}/>
         </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Customer Name</Form.Label>
-        <Form.Control type='text' placeholder="Enter name" onChange={(e)=> setCustomerName(e.target.value)}/>
-        </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Customer Email</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" onChange={(e)=> setCustomerEmail(e.target.value)}/>
-        </Form.Group>
+              
+          <Form.Group className="mb-3">
+          <Form.Label htmlFor="disabledSelect">Disabled select menu</Form.Label>
+          <Form.Select id="disabledSelectoption" onChange={(e)=> setType(e.target.value)}>
+            <option>Debit</option>
+            <option>Credit</option>
+          </Form.Select>
+          </Form.Group>
+
             </Form>    
         </Modal.Body>
         <Modal.Footer>

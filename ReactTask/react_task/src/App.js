@@ -1,12 +1,12 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import { AddTransaction } from './components/AddTransaction';
+import { TranscationList } from './components/TranscationList';
 
 function App() {
   return (
     <div>
-    <AddTransaction/>
-    </div>
+<TranscationList/>    
+</div>
   );
 }
 
